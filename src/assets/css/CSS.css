@@ -1,0 +1,698 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~單一用的~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+div, p, span, ul, ol, li, h1, h2, h3, h4, h5, h6, input, table, td, th, img {
+    margin: 0;
+    padding: 0;
+    border: none;
+    word-break: break-all;
+}
+.block {
+    margin: 10px 10px 10px;
+    background: #fafafa;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~user用的~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.container_user{
+    float:right;
+    position: relative;
+    width: 150px;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(rgb(159, 204, 247),rgb(189, 251, 255));
+    border-radius:40px;
+    padding: 3px 0px;
+    text-align: center;
+    transition: 0.3s;
+}
+.div_user {
+    font-size: 14px;
+    position: relative;
+    top: -15px;
+}
+.div_user::before{
+    content: url(../images/icon_user.png);
+    position: relative;
+    top: 15px;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~選單用的~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.container{
+    position: relative;
+    width: 180px;
+    color: brown;
+    background-color: rgb(0, 10, 151);
+    padding: 10px 0px;
+    text-align: center;
+    transform: translateX(-105%);
+    transition: 0.3s;
+}
+#chk:checked ~ .container{
+    transform: translateX(-5%);
+}
+.item{
+    padding: 10px;
+    margin: 5px;
+    width: 80% ;
+    background-color: rgb(255, 255, 255);
+}
+.item:hover{
+    padding: 10px;
+    margin: 5px;
+    width: 85% ;
+    background-color: rgb(2, 167, 243);
+}
+.but {
+    background: url(../images/menu_open.png);
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    right: -35px;
+    top:0%
+}
+#chk:checked ~ .but{
+    background-image: url(../images/menu_off.png);
+    
+}
+label {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    font-size: 16px;
+}
+label.btn {
+    background-color: #64abe1;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    padding: 0 5px;
+    line-height: 30px;
+    line-height: 30px;
+    display: block;
+    font-size: 15px;
+    margin: 0; /* tunning */
+    padding: 0; /* tunning */
+}
+.input_picker, .file_picker2 {
+    position: relative;
+    height: 30px;
+}
+
+.input_picker > .inputbox {display: inline-block;position: absolute;right: 82px;left: 0;}
+.input_picker > .inputbox + button, .input_picker > .inputbox + label {display: inline-block;position: absolute;right: 0;width: 78px;}
+
+.file_picker2 > .inputbox {
+    display: inline-block;
+    position: absolute;
+    right: 164px;
+    left: 0;
+}
+
+.file_picker2 > .inputbox + label {
+    display: inline-block;
+    position: absolute;
+    right: 82px;
+    width: 78px;
+}
+
+.file_picker2 > .inputbox + label + button {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    width: 78px;
+    background-color: #8dd377;
+}
+
+.file_picker2 > .inputbox + label + button:hover {
+    background-color: #51A854;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~table用的~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+table.tb_style label.checkboxContainer,
+table.tb_style .inputbox2 {
+    vertical-align: middle;
+}
+/* 表格樣式 - 條列*/
+table.listBox {
+    background-color: #fff;
+    border: 1px solid #758ead;
+}
+table.listBox {
+    background-color: #fff;
+    border: 1px solid #758ead;
+}
+
+table.listBox input {
+    float: none;
+    margin: 0;
+}
+
+table.listBox th, table.listBox td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+table.listBox th {
+	color: #495460;
+	background-color: #e9f0f5;
+	font-size: 14px;
+	line-height: 18px;
+	padding: 10px;
+	font-weight: normal;
+	border-left: solid 1px #ddd; /*加隔線*/
+	border-bottom: solid 1px #ddd; /*加隔線*/
+}
+
+table.listBox th:last-child {
+	border-right: none;
+}
+
+table.listBox th a {
+	color: #fff;
+}
+
+table.listBox th a:hover {
+	color: #CCC;
+}
+
+table.listBox td {
+	color: #555;
+	font-size: 14px;
+	padding: 5px;
+	border-left: solid 1px #ddd; /*加隔線*/
+}
+
+.listBox .inputbox, .listBox .selectbox {
+    margin: 0;
+}
+table.listBox td.tL {
+    text-align: left;
+}
+table.listBox.tL td {
+    text-align: left;
+}
+.listBox .sort {
+    display: inline-block;
+}
+.listBox .sort a {
+	color: #495460;
+	font-size: 14px;
+	padding: 0;
+}
+.listBox .sort a:hover {
+	color: #2880be;
+}
+table.searcnBox {
+    border-bottom: 2px solid #e2e2e2;
+}
+
+    table.searcnBox th, table.searcnBox td {
+        color: #425367;
+        text-align: left;
+        padding: 5px;
+    }
+
+    table.searcnBox th {
+        font-size: 1em;
+        padding-left: 20px;
+    }
+    table.searcnBox td {
+        font-size: 0.95em;
+        padding-left: 10px;
+    }
+/* 表格樣式 - 條列*/
+table.listBox {
+    background-color: #fff;
+    border: 1px solid #758ead;
+}
+
+table.listBox input {
+    float: none;
+    margin: 0;
+}
+
+table.listBox th, table.listBox td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+    table.listBox th {
+        color: #495460;
+        background-color: #e9f0f5;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 10px;
+        font-weight: normal;
+        border-left: solid 1px #ddd; 
+        border-bottom: solid 1px #ddd; 
+    }
+
+        table.listBox th:last-child {
+            border-right: none;
+        }
+
+        table.listBox th a {
+            color: #fff;
+        }
+
+            table.listBox th a:hover {
+                color: #CCC;
+            }
+
+    table.listBox td {
+        color: #555;
+        font-size: 14px;
+        padding: 5px;
+        border-left: solid 1px #ddd;
+    }
+
+.listBox .inputbox, .listBox .selectbox {
+    margin: 0;
+}
+
+table.listBox td.tL {
+    text-align: left;
+}
+table.listBox.tL td {
+    text-align: left;
+}
+table.listBox tr:nth-child(odd) {
+    background-color: #f5f5f5;
+}
+
+table.mainBox {
+	width: 100%;
+	line-height: 1.5em;
+	background-color: #fff;
+	border-bottom: 2px solid #64abe1;
+	border-top: none;
+	color: #425367;
+}
+
+table.mainBox th, table.mainBox td {
+	text-align: left;
+	font-size: 15px;
+	padding: 8px;
+}
+
+table.mainBox th {
+	padding-left: 10px;
+}
+
+
+table.mainBox tr:nth-child(even) {
+	background-color: #f5f5f5;
+}
+
+/*表格樣式1*/
+.tb_style {
+    background-color: #fff; /*border-top:1px solid #75a8c8;*/
+    table-layout: auto;
+    word-break: keep-all;
+}
+
+.tb_style th {
+	font-weight: normal;
+	color: #425367;
+}
+
+.tb_style .bg {
+	background-color: #e9eef1;
+}
+
+.tb_style th, .tb_style td {
+	padding: 10px;
+	font-size: 15px;
+}
+
+/*表格樣式2*/
+.tb_style2 {
+    margin: 0 0 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tb_style2 th {
+	font-weight: normal;
+	color: #425367;
+	width: 12%;
+	font-size: 16px;
+}
+
+.tb_style2 td {
+	width: 38%;
+}
+
+.tb_style2 .bg {
+	background-color: #e9eef1;
+}
+/*.tb_style2 .selectbox{margin: 0;}*/
+.tb_style2 th, .tb_style2 td {
+	padding: 0 0 10px;
+}
+
+/*表格樣式3*/
+.tb_style3 {
+    margin: 0 0 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tb_style3 th {
+	font-weight: normal;
+	color: #425367;
+	width: 12%;
+	font-size: 16px;
+}
+
+.tb_style3 td {
+	width: 11%;
+}
+
+.tb_style3 .bg {
+	background-color: #e9eef1;
+}
+/*.tb_style2 .selectbox{margin: 0;}*/
+.tb_style3 th, .tb_style3 td {
+	padding: 10px 10px 10px;
+}
+th > a.add {
+    font-size: 15px;
+    color: #446e87;
+    line-height: 20px;
+}
+
+    th > a.add:hover {
+        color: #2880be;
+    }
+
+    th > a.add > span {
+        background: #8396a2 url(../images/side_btn_add.png)0 center no-repeat;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    th > a.add:hover > span {
+        background-color: #2880be;
+    }
+
+
+th > label > a.add {
+    font-size: 15px;
+    color: #446e87;
+    line-height: 20px;
+}
+
+    th > label > a.add:hover {
+        color: #2880be;
+    }
+
+    th > label > a.add > span {
+        background: #8396a2 url(../images/side_btn_add.png)0 center no-repeat;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    th > label > a.add:hover > span {
+        background-color: #2880be;
+    }
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~主要範圍 用的~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.main {
+    padding: 0 20px 10px;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~按鈕用的~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+button.btn:disabled {
+    background-color: #a1a1a1;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~input用的~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.checkboxContainer:hover input ~ .checkmark {
+    background-color: #eee;
+}
+.numberbox, .inputbox2 {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 0;
+    position: relative;
+    width: fit-content;
+    display:inline-block;
+}
+input[type="text"], input[type="password"], textarea, select, button {
+	font-size: 1em;
+}
+.inputbox input[type="text"], .inputbox input[type="password"] {
+	border: none;
+}
+.search_ul .selectbox, .search_ul .inputbox, .search_ul input[type="text"], .search_ul input[type="password"], .search_ul textarea, .search_ul select {
+	margin: 0;
+	line-height: 30px;
+	height: 30px;
+}
+input[type="text"], input[type="password"], textarea, select, button {
+	font-size: 1em;
+}
+input[type="text"], input[type="password"], textarea, select {
+    font: 16px/100% Arial, "微軟正黑體";
+    color: #636363;
+    width: 100%;
+    line-height: 30px;
+    height: 30px;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 0 5px;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+}
+input[type="number"] {
+    font: 16px/100% Arial, "微軟正黑體";
+    color: #636363;
+    /*width: 100%;*/
+    line-height: 30px;
+    height: 30px;
+    border-radius: 4px;
+    overflow: hidden;
+    padding: 0 5px;
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    text-align: right; /* 數字靠右 */
+}
+.inputbox, .selectbox {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 0;
+    position: relative;
+}
+
+    .inputbox.cal {
+        padding: 0 30px 0 0;
+        position: relative;
+        box-sizing: border-box;
+        display: inline-block;
+        vertical-align: middle;
+        width: 48%;
+    }
+
+        .inputbox.cal a.date {
+            width: 30px;
+            height: 30px;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-size: 24px auto;
+        }
+
+    .inputbox input[type="text"], .inputbox input[type="password"] {
+        border: none;
+    }
+.numberbox, .inputbox2 {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 0;
+    position: relative;
+    width: fit-content;
+    display:inline-block;
+}
+table.tb_style label.checkboxContainer,
+table.tb_style .inputbox2 {
+    vertical-align: middle;
+}
+
+/* button.btn:disabled */
+button.btn:disabled {
+    background-color: #a1a1a1;
+}
+
+.selectbox {
+    padding: 0;
+    background: #fff url(../images/icon_select_arrow.png) right center no-repeat;
+    background-size: contain;
+}
+
+.selectbox2 {
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+    width: fit-content;
+    display: inline-block;
+    padding: 0;
+    background: #fff url(../images/icon_select_arrow.png) right center no-repeat;
+    background-size: contain;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~checked 用的~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.checkboxContainer input:checked ~ .checkmark {
+    background-color: #fff;
+}
+.checkboxContainer input:disabled ~ .checkmark {
+    background-color: #bbb;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~副標題 用的 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+a {
+    text-decoration: none;
+    color: #1678b6;
+    cursor: pointer;
+}
+.sub_tit {
+	font-size: 1em;
+	line-height: 1.4em;
+}
+.sub_tit .side_btn li a:hover span {
+    background-color: #2880be;
+}
+.sub_tit {
+    color: #425367;
+    font-size: 18px;
+    line-height: 20px;
+    border-left: 4px solid #425367;
+    padding: 0 0 0 5px;
+    margin: 0 0 10px;
+    position: relative;
+}
+
+
+.btn_set {
+    text-align: center;
+    margin: 0 0 10px;
+}
+
+.btn_set li {
+	display: inline-block;
+	margin: 0 5px;
+	min-width: 100px;
+}
+
+.btn_set li input[type="button"] {
+	border-radius: 4px;
+	background-color: #64abe1;
+	color: #fff;
+	padding: 0 10px;
+	line-height: 40px;
+	height: 40px;
+	width: 100%;
+}
+
+	.btn_set li input[type="button"].del {
+		background-color: #a1a1a1;
+	}
+
+	.btn_set li input[type="button"]:hover {
+		background-color: #2880be;
+	}
+
+.btn_set.full li {
+	width: 100%;
+	margin: 0;
+	display: block;
+}
+
+.btn_set.full a {
+	background-color: #75a8c8;
+	display: block;
+	color: #fff;
+	line-height: 34px;
+}
+
+.btn_set.full span.add {
+	display: inline-block;
+	vertical-align: top;
+	width: 30px;
+	height: 30px;
+	background: url(../images/side_btn_add.png) center center no-repeat;
+}
+
+.btn_set.full a:hover {
+	background-color: #2880be;
+}
+input[type="button"] {
+    background-color: #f85953;
+    text-align: center;
+    height: 30px;
+    border-radius: 4px;
+    padding: 0 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    font: normal 16px/140% Arial, Helvetica, "微軟正黑體";
+}
+
+    input[type="button"]:hover {
+        filter: alpha(opacity=80);
+        -moz-opacity: 0.8;
+        opacity: 0.8;
+        -khtml-opacity: 0.8;
+    }
+
+.mainBlock input[type="button"] {
+    display: inline-block;
+}
+.popupBox .btn_set {
+        background-color: #f7f7f7;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        padding: 20px 0;
+        -webkit-border-bottom-right-radius: 10px;
+        -webkit-border-bottom-left-radius: 10px;
+        -moz-border-radius-bottomright: 10px;
+        -moz-border-radius-bottomleft: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+.main {
+    padding: 0 20px 10px;
+}
+
+
+.OverLay { 
+    
+    filter: Alpha(Opacity=30);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} 
+
+.OverLay_ui { 
+    position: relative;
+    width: 98%;
+    top: 10vh;
+    margin:0 auto;
+} 

@@ -1,0 +1,444 @@
+/*body {
+    width: 100%;
+    min-height: 700px;
+}*/
+
+/*a {
+    cursor: pointer;
+    text-decoration: underline;
+}*/
+.OverLay { 
+    
+    filter: Alpha(Opacity=30);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} 
+
+.OverLay_ui { 
+    position: relative;
+    width: 98%;
+    top: 10vh;
+    margin:0 auto;
+} 
+
+
+.button {
+    border: none;
+    font-size: 1em;
+    line-height: 40px;
+    width: 100%; /*height: 40px;*/
+    text-align: center;
+    border-radius: 4px;
+    font: normal 18px/100% Arial, Helvetica, "微軟正黑體";
+}
+
+table{
+    background-color: #fff;
+}
+
+.textareabox{
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+    background-color: #fff;
+    margin: 0;
+    position: relative;
+    width: fit-content;
+    display:inline-block;
+    height: 150px;
+}
+
+.div_user {
+    font-size: 14px;
+    position: relative;
+    top: -15px;
+}
+
+.div_user::before{
+    content: url(../images/icon_user.png);
+    position: relative;
+    top: 15px;
+}
+.container_user{
+    float:right;
+    position: relative;
+    width: 150px;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(rgb(159, 204, 247),rgb(189, 251, 255));
+    border-radius:40px;
+    padding: 3px 0px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.but {
+    background: url(../images/menu_open.png);
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    right: -35px;
+    top:0%
+}
+#chk:checked ~ .but{
+    background-image: url(../images/menu_off.png);
+    
+}
+.container{
+    position: relative;
+    width: 180px;
+    color: brown;
+    background-color: rgb(0, 10, 151);
+    padding: 10px 0px;
+    text-align: center;
+    transform: translateX(-100%);
+    transition: 0.3s;
+}
+#chk:checked ~ .container{
+    transform: translateX(-0%);
+}
+
+.item{
+    padding: 10px;
+    margin: 5px;
+    width: 80% ;
+    background-color: rgb(255, 255, 255);
+}
+.item:hover{
+    padding: 10px;
+    margin: 5px;
+    width: 85% ;
+    background-color: rgb(2, 167, 243);
+}
+/*************************************************自己用的************************************************************/
+.ui-dialog-overlay {
+    background: #aaaaaa;
+    opacity: .3;
+    filter: Alpha(Opacity=30);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.ui-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    outline: 0 none;
+    padding: 0 !important;
+    background-color: white;
+    border: 1px solid #f6f6f6;
+}
+
+.ui-dialog.maximized{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.ui-dialog.minimized{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.ui-dialog .ui-dialog-titlebar {
+    position: relative;
+    font-size: 1em;
+    border-radius: 3px;
+    padding: 0.5em;
+    height: 35px;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.ui-dialog.vue-draggable .ui-dialog-titlebar {
+    cursor: move;
+}
+
+.ui-dialog .ui-dialog-titlebar .action-items {
+    float: right;
+    position: relative;
+}
+
+.ui-dialog .ui-dialog-titlebar .title {
+    float: left;
+    margin-right: .5em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    display: block;
+    float: left;
+    margin: 5px;
+    cursor: pointer;
+    background-size: cover;
+}
+
+.icon.icon-close {
+    width: 20px;
+    height: 20px;
+    background-image: url("./img/close.png");
+}
+
+.icon.icon-minimize {
+    background-image: url("./img/minimize.png");
+}
+
+.icon.icon-maximize {
+    background-image: url("./img/maximize.png");
+}
+
+.icon.icon-restore {
+    background-image: url("./img/restore.png");
+}
+
+.ui-dialog .ui-dialog-content {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    overflow: auto;
+    position: relative;
+    padding: 0.5em;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: right;
+    border-width: 1px 0 0 0;
+    border-top: 1px solid #f6f6f6;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset{
+    padding: 0.5em;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+	margin: 0 .5em 0 .5em;
+    cursor: pointer;
+    background-color: #f6f6f6;
+    padding: 0.5em 1em;
+    outline: none;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+}
+
+.ui-dialog .ui-dialog-buttonpane button:hover{
+    background-color: #CCCCCC;
+    border: 1px solid #BBBBBB;
+}
+
+.ui-dialog .vue-resizable-handle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 0;
+    right: 0;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmYwMCIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iNnB4Ij48ZyBvcGFjaXR5PSIwLjMwMiI+PHBhdGggZD0iTSA2IDYgTCAwIDYgTCAwIDQuMiBMIDQgNC4yIEwgNC4yIDQuMiBMIDQuMiAwIEwgNiAwIEwgNiA2IEwgNiA2IFoiIGZpbGw9IiMwMDAwMDAiLz48L2c+PC9zdmc+');
+    background-position: bottom right;
+    padding: 0 3px 3px 0;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    box-sizing: border-box;
+    cursor: se-resize;
+}
+
+/* �վ� for MTNet2 */
+.ui-dialog 
+{
+  border-radius: 10px;
+}
+
+.ui-dialog .ui-dialog-titlebar 
+{
+    background-color: #64abe1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.ui-dialog .ui-dialog-titlebar .title {
+    float: left;
+    margin-right: .5em;
+    font-family: "Microsoft JhengHei", Arial;
+    font-size: 1.5em;
+    line-height: 40px;
+    background: inherit;
+    color: #fff;
+    margin: inherit;
+}
+
+.ui-dialog .ui-dialog-content {
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    overflow: auto;
+    position: relative;
+    padding: 0.8em;
+    text-align: left;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: right;
+    border-width: 1px 0 0 0;
+    border-top: 1px solid #f6f6f6;
+    background-color: #f7f7f7;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+    margin: 0 .5em 0 .5em;
+    cursor: pointer;
+    background-color: #f6f6f6;
+    padding: 0.5em 1em;
+    outline: none;
+    border: 1px solid #CCCCCC;
+    border-radius: 3px;
+    width: inherit;
+}
+
+.ui-dialog .w_box {
+    margin: 0 0 10px;
+    font-size: 0.9em;
+}
+
+.ui-dialog .search_ul li {
+    margin: 0 -6px 10px 0;
+}
+
+/* �վ� for vueCollapse */
+.vueCollapse--collapse {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #e9eef1;
+    margin: 10px;
+}
+
+.vueCollapse--content 
+{
+    padding: 5px;
+    overflow: visible;
+}
+
+.vueCollapse2_collapse {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #e9eef1;
+    margin: 10px;
+    padding: 5px;
+}
+
+.vueCollapse2_collapse .title,
+.vueCollapse2_collapse .sub_tit,
+.vueCollapse2_collapse .tab_ul {
+    text-align: left;
+}
+
+.vueCollapse2_collapse table.tb_style2 td {
+    text-align: left;
+    border-left: unset; /*�����j�u*/
+}
+
+.vueCollapse2_collapse table.tb_style2 th {
+    border-left: unset; /*�����j�u*/
+    border-bottom: unset; /*�����j�u*/
+}
+
+/*** �ۭq CheckBox : BEGIN ***/
+
+/* The container */
+.checkboxContainer {
+    display: inline-block;
+    position: relative;
+    padding-left: 4px;
+    /*margin-bottom: 12px;*/
+    margin-top:4px;
+    cursor: pointer;
+    /*font-size: 22px;*/
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.checkboxContainer input {
+    /*position: absolute;*/
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: -2px;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #fff;
+    border: solid thin #bbb;
+    border-radius: 5px;
+}
+
+/* On mouse-over, add a grey background color */
+.checkboxContainer:hover input ~ .checkmark {
+    background-color: #eee;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkboxContainer input:checked ~ .checkmark {
+    background-color: #fff;
+}
+
+/* When the checkbox is disable, add a blue background */
+.checkboxContainer input:disabled ~ .checkmark {
+    background-color: #bbb;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkboxContainer input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkboxContainer .checkmark:after {
+    left: 6px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid #2196F3;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/***CheckBox : END ***/
+
+/* tabel.tb_style */
+table.tb_style label.checkboxContainer,
+table.tb_style .inputbox2 {
+    vertical-align: middle;
+}
+
+/* button.btn:disabled */
+button.btn:disabled {
+    background-color: #a1a1a1;
+}
+
