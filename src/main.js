@@ -8,10 +8,10 @@ import Base64 from "js-base64"
 import store from "./mainStore"
 import './assets/css/datepicker.css';
 import './assets/css/dual-listbox.css';
-import './assets/css/global.css';
-import './assets/css/index.css';
+// import './assets/css/global.css';
+// import './assets/css/index.css';
 import './assets/css/radio.css';
-//import './assets/css/CSS.css';
+import './assets/css/CSS.css';
 
 
 Vue.config.productionTip = false

@@ -10,27 +10,28 @@
                         <table width='100%' border='0' cellSpacing='0' cellPadding='0' class='tb_style'>
                             <tbody>
                                 <tr>
-                                    <th colspan="6" align="right"><a class='add' @click="storeData.type='add'"><span></span>新增</a></th>
+                                    <th colspan="6" align="right"><a class='add' @click="storeData.type='add'; storeData.nowDdata={}"><span></span>新增</a></th>
                                 </tr>
                                 <tr>
-                                    <td scope='row' align="left">監測編碼:</td>
+                                    <td scope='row' align="left" width='7%'>監測編碼:</td>
                                     <td>
                                         <div class='selectbox'>
                                             <select v-model="efCode">
-                                                <option v-for="list in dataList" :value="list.MN_NO">{{list.MN_NAM}}</option>
+                                                <option value=""></option>
+                                                <option v-for="list in  storeData.dataList" :value="list.MN_NO">{{list.MN_NAM}}</option>
                                             </select>
                                         </div>
                                     </td>
-                                    <td scope='row'>監測項目:</td>
+                                    <td scope='row' width='7%%'>監測項目:</td>
                                     <td>
                                         <div class='selectbox'>
                                             <select v-model="bit">
-                                                <option value="A">水管</option>
-                                                <option value="D">窩懶得打ㄅ欠</option>
+                                                <option value=""></option>
+                                                <option v-for="listData in storeData.bitList" :value="listData.value">{{listData.name}}</option>
                                             </select>
                                         </div>
                                     </td>
-                                    <td scope='row'>檢體來源:</td>
+                                    <td scope='row' width='7%%'>檢體來源:</td>
                                     <td>
                                         <div class='selectbox'>
                                             <select v-model="tsc">
@@ -76,11 +77,11 @@
                     <td>{{value.TSC}}</td>
                     <td>{{value.RTP}}</td>
                     <td>{{value.RTT}}</td>
-                    <td><a @click="storeData.type='edit'">修改</a></td>
+                    <td><a @click="storeData.type='edit' ; let c =  Object.assign({}, value); c.MN_NAM = base64Decode(c.MN_NAM) ;c.srcNam = base64Decode(c.srcNam) ;  storeData.nowDdata= c ">修改</a></td>
                 </tr>
             </tbody>
         </table>
-
+            {{isDoSeach(storeData.isSeach)}}
     </div>
 </template>
 
@@ -99,57 +100,9 @@ export default {
     data () {
         return {
             isShow:false,
-            id: '',
-            chart: '',
-            time1:"",
-            time2:"",
             seachData:[
                
             ],
-            dataList:[{
-                MN_NO: '20190128084743000021',
-                MN_COD: 'AIRB',
-                MN_NAM: '空氣落菌',
-                SRC: '1'
-                },
-                {
-                MN_NO: '20190201135955000023',
-                MN_COD: 'BCWQ',
-                MN_NAM: '燒傷中心水質',
-                SRC: '1'
-
-                },
-                {
-                MN_NO: '20190308134623000026',
-                MN_COD: 'ERPA',
-                MN_NAM: '員工餐廳準備區',
-                SRC: '3'
-
-                },
-                {
-                MN_NO: '20190123143114000020',
-                MN_COD: 'ERTB',
-                MN_NAM: '員工餐廳餐具',
-                SRC: '2'
-                },
-                {
-                MN_NO: '20190306110518000025',
-                MN_COD: 'ERWQ',
-                MN_NAM: '員工餐廳水質',
-                SRC: '1'
-                },
-                {
-                MN_NO: '20190115144044000004',
-                MN_COD: 'ESMN',
-                MN_NAM: '內視鏡監測',
-                SRC: '2'
-                },
-                {
-                MN_NO: '20190314100148000029',
-                MN_COD: 'ESMN-G',
-                MN_NAM: '內視鏡監測(腸胃管鏡)',
-                SRC: '1'
-                }],
             efCode:"",
             tsc:'A',
             bit:'',
@@ -167,16 +120,18 @@ export default {
             let obj = {
                 wb_base64: 0, 
                 encode: "N",
-                TSC: this.tsc
+                TSC: this.tsc,
+                MN_NO :(this.efCode ? this.efCode :''),
+                SRC :(this.bit ? this.bit :'')
             }
             param.append("var", Base64.encode(JSON.stringify(obj)));
             this.$axios.post("/api", param, conf)
             .then(response => {
-                console.log(response)
-                console.log(Base64.decode(response.data))
+                //console.log(response)
+                //console.log(Base64.decode(response.data))
                 
                 let e = JSON.parse(Base64.decode(response.data)).val
-                this.seachData =e ;
+                this.seachData = e ;
 
 
             })
@@ -186,6 +141,12 @@ export default {
         },
         base64Decode(value){
             return Base64.decode(value)
+        },
+        isDoSeach(){
+            if(this.storeData.isSeach){
+                this.storeData.isSeach=false;
+                this.testCall()
+            }
         }
     },
     props: ['storeData'],

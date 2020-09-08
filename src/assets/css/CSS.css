@@ -333,8 +333,18 @@ table.mainBox tr:nth-child(even) {
 	font-size: 16px;
 }
 
+
 .tb_style2 td {
 	width: 38%;
+}
+ table.tb_style2 td {
+    text-align: left;
+    border-left: unset; 
+}
+
+ table.tb_style2 th {
+    border-left: unset; 
+    border-bottom: unset; 
 }
 
 .tb_style2 .bg {

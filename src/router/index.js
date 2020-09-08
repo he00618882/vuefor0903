@@ -2,7 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
 import EIPUI from '@/components/function/EIPUI'
-import Liver from '@/components/function/liver'
+import notThing from '@/components/function/notThing'
+import meteorological from '@/components/function/meteorological'
 Vue.use(Router)
 
 export default new Router({
@@ -18,8 +19,12 @@ export default new Router({
           component:EIPUI
         },
         {
-          path:"liver",
-          component:Liver
+          path:"notThing",
+          component:notThing
+        },
+        {
+          path:"meteorological",
+          component:meteorological
         }
       ]
     }

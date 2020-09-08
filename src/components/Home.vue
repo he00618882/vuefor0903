@@ -10,17 +10,17 @@
             <label class="but"  for="chk"></label>
             <div class="item">                  
               <router-link to="/EIPUI">
-                    UI
+                    忘記功能編號了
               </router-link>
             </div>
             <div class="item">                  
-              <router-link to="/liver">
-                    不存在
+              <router-link to="/meteorological">
+                    氣像查詢
               </router-link>   
             </div>
              <div class="item">                  
-              <router-link to="/liver">
-                    不存在
+              <router-link to="/notThing">
+                    沒有東西ㄅ要點我
               </router-link>   
             </div>
         </div>
